@@ -1,6 +1,3 @@
-@charset "utf-8";
-/* CSS Document */
-
 html, body {
   box-sizing: border-box;
 }
@@ -63,6 +60,8 @@ nav {
   height: 80px;
   background-color: #252831;
   text-align:center;
+  display: flex;
+  align-items: center;
 }
 nav h1 {
   margin: auto;
@@ -157,6 +156,7 @@ nav h1 a {
 #restaurants-list li {
   background-color: #fff;
   border: 2px solid #ccc;
+  border-radius: 15px 0;
   font-family: Arial,sans-serif;
   margin: 15px;
   min-height: 380px;
@@ -171,6 +171,7 @@ nav h1 a {
   max-width: 100%;
   min-height: 248px;
   min-width: 100%;
+  border-radius: 15px;
 }
 #restaurants-list li h1 {
   color: #f18200;
@@ -200,6 +201,10 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Details ====================== */
+.inside nav {
+  display: flex;
+  align-items: center;
+}
 .inside header {
   position: fixed;
   top: 0;
@@ -237,6 +242,7 @@ nav h1 a {
 }
 #restaurant-img {
 	width: 90%;
+  border-radius: 15px 0;
 }
 #restaurant-address {
   font-size: 12pt;
@@ -278,6 +284,7 @@ nav h1 a {
 #reviews-list li {
   background-color: #fff;
   border: 2px solid #f3f3f3;
+  border-radius: 15px 0;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -286,17 +293,30 @@ nav h1 a {
   position: relative;
   width: 85%;
 }
+#reviews-list li h1 {
+  padding-top: 10px;
+}
+#reviews-list li h4 {
+  background-color: #f58500;
+  color: #fff;
+  width: 12%;
+  padding: 5px;
+  border-radius: 5px;
+}
 #reviews-list li p {
   margin: 0 0 10px;
 }
+
 #restaurant-hours td {
   color: #666;
 }
+
 .inside #map-container {
 position: absolute;
 height: 90%;
 }
 
+/* ====================== Media Queries ====================== */
 @media screen and (max-width: 425px)  {
   #restaurants-list {
     max-width: 399px
@@ -320,12 +340,16 @@ height: 90%;
   #restaurant-container, #reviews-container, .inside #map-container {
     width: 100%;
   }
- .inside #map-container {
+   #restaurant-container, #reviews-container, .inside #footer, #reviews-list {
+    
+    
+   }
+   .inside #map-container {
     top: 0;
     right: 0;
     height: 25%;
-  }
-  .inside #map{
-   position: inherit;
+   }
+   .inside #map{
+    position: inherit;
    }
 }
